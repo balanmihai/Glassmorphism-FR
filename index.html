@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <img src="plants.jpg" alt="">
+
+  <h1 class="bgtext">
+    Tout gaz sans freins</h1>
+  </div>
+  <div class="container" id="glass">
+
+    <h2 class="seq">
+      le chaos social est le nouveau renaissance</h2>
+  </div>
+  <div class="start" id="start">
+  <h3 class="seq">appuyez sur le bouton pour conquérir le monde entier</h3>
+  </div>
+  <a href="https://balaurl.work/" class="logo">balaurl</a>
+
+  <button class="box1 animated infinite rotate-full">
+    <a href="#">start</a>
+  </button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+  <script>
+    const glass = document.getElementById('glass');
+    const start = document.getElementById('start');
+    const tl = gsap.timeline({defaults: {ease:"power2.inOut", duration:1.5}})
+    tl.from('img', {x: '-10%', opacity:0})
+      .from('.container', {opacity:0, delay: .5, duration: 1}, "-=1.5")
+      .from('.container', {x: '-20%', backdropFilter:'blur(0px)'})
+      .from('.start', {opacity:0, delay: .5, duration: 1}, "-=1.5")
+      .from('.start', {x: '-20%', backdropFilter:'blur(0px)'})
+      .from('seq', {y:-30, opacity: 0, stagger: .2, duration: .5}, "-=.5")
+      .from('button', {y:-30, opacity: 0, stagger: .2, duration: .5}, "-=.5")
+      .from('h1', {y:20, clipPath:'inset(0 0 100% 0)'}, "-=.8")
+      .from('a', {y:20, clipPath:'inset(0 0 100% 0)'}, "-=.8")
+  </script>
+</body>
+</html>
